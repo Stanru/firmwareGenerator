@@ -27,7 +27,7 @@
         </Label>
         <TextField fx:id="numberOfChannelsField" layoutX="314.0" layoutY="75.0" onKeyReleased="#numberOfChannelsFieldChange" prefHeight="25.0" text="4" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="80.0" />
 
-        <Label fx:id="controllerLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="74.0" prefHeight="25.0" text="контролер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="115.0">
+        <Label fx:id="controllerLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="74.0" prefHeight="25.0" text="контроллер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="115.0">
             <font>
                 <Font size="18.0" />
             </font>

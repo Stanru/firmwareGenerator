@@ -46,7 +46,7 @@ public class Kamerton5_1 implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         serialNumberInterface = new TextParameterDecorator(serialNumberLabel, serialNumberField, "5");
         yearOfReleaseInterface = new TextParameterDecorator(yearOfReleaseLabel, yearOfReleaseField, "2020");
-        numberOfChannelsInterface = new TextParameterDecorator(numberOfChannelsLabel, numberOfChannelsField, "0");
+        numberOfChannelsInterface = new TextParameterDecorator(numberOfChannelsLabel, numberOfChannelsField, "4");
         controllerInterface = new ComboBoxParameterDecorator(controllerLabel, controllerComboBox);
 
         for(Controller o: Controller.values())

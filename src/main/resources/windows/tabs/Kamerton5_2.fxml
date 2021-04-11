@@ -38,7 +38,7 @@
                 <Font size="14.0" />
             </font></TextField>
 
-        <Label fx:id="controllerLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="74.0" prefHeight="25.0" text="контролер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
+        <Label fx:id="controllerLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="74.0" prefHeight="25.0" text="контроллер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
             <font>
                 <Font size="18.0" />
             </font>
