@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="@../../css/firmwareGenerator.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.tabs.Stix4">
+    <children>
+        <Button layoutX="107.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonPush" prefHeight="100.0" text="Счетчик наработки" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font size="25.0" />
+            </font></Button>
+    </children>
+</AnchorPane>

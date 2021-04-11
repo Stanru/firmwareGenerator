@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+}
+
+sourceCompatibility  = 1.8
+mainClassName = "Main"
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+group 'ru.zaozet.itgavrilov'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task('addProperties') {
+    doLast {
+        file("src/main/resources/properties.properties").delete();
+        file("src/main/resources/properties.properties").append("progammName="+rootProject.name+"\n")
+        file("src/main/resources/properties.properties").append("version=$version")
+    }
+}
+
+configurations {
+    // configuration that holds jars to include in the jar
+    extraLibs
+}
+
+jar {
+    //jar.setBaseName(programName+'_'+version+'.jar')
+    manifest.attributes("Main-Class": mainClassName)
+    from {
+        configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+jar.dependsOn(addProperties)
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.tabs.Orbita"
+            stylesheets="@../../css/firmwareGenerator.css">
+    <children>
+        <Button layoutX="53.0" layoutY="31.0" mnemonicParsing="false" onAction="#buttonDiodPush" prefHeight="100.0" text="плата с шумовым диодом" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font size="25.0" />
+            </font></Button>
+        <Button layoutX="53.0" layoutY="119.0" mnemonicParsing="false" onAction="#buttonPush" prefHeight="100.0" text="плата с цифровым блоком" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="120.0">
+            <font>
+                <Font size="25.0" />
+            </font></Button>
+    </children>
+</AnchorPane>

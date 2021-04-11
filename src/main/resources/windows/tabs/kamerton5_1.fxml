@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane stylesheets="@../../css/firmwareGenerator.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.tabs.Kamerton5_1">
+    <children>
+        <Label fx:id="serialNumberLabel" layoutX="161.0" layoutY="14.0" prefHeight="25.0" text="серийный номер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="serialNumberField" layoutX="314.0" layoutY="15.0" onKeyReleased="#serialNumberFieldChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="10.0" />
+
+        <Label fx:id="yearOfReleaseLabel" layoutX="205.0" layoutY="43.0" prefHeight="25.0" text="год выпуска:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="45.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="yearOfReleaseField" layoutX="314.0" layoutY="44.0" onKeyReleased="#yearOfReleaseFieldChange" prefHeight="25.0" text="2020" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="45.0" />
+
+        <Label fx:id="numberOfChannelsLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="74.0" prefHeight="25.0" text="количество каналов:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="80.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="numberOfChannelsField" layoutX="314.0" layoutY="75.0" onKeyReleased="#numberOfChannelsFieldChange" prefHeight="25.0" text="4" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="80.0" />
+
+        <Label fx:id="controllerLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="74.0" prefHeight="25.0" text="контролер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="115.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="controllerComboBox" layoutX="309.0" layoutY="25.0" onAction="#controllerComboBoxChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="115.0" />
+
+        <Button fx:id="button" disable="true" layoutX="210.0" layoutY="107.0" mnemonicParsing="false" onAction="#buttonPush" prefHeight="100.0" text="Сгенерировать" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
