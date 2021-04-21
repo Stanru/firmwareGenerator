@@ -5,7 +5,9 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane stylesheets="@../../css/firmwareGenerator.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.tabs.Rosyanka">
-        <Label fx:id="serialNumberLabel" layoutX="161.0" layoutY="59.0" prefHeight="25.0" text="серийный номер:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="45.0">
+    <children>
+        <ComboBox fx:id="typeComboBox" layoutX="309.0" layoutY="25.0" onAction="#typeComboBoxChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="10.0" />
+        <Label fx:id="serialNumberLabel" layoutX="161.0" layoutY="59.0" prefHeight="25.0" text="серийный номер:" visible="false" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="45.0">
             <font>
                 <Font size="18.0" />
             </font></Label>
@@ -13,15 +15,53 @@
             <font>
                 <Font size="18.0" />
             </font></Label>
-        <TextField fx:id="serialNumberField" disable="true" layoutX="309.0" layoutY="58.0" onKeyReleased="#serialNumberFieldChange" prefHeight="25.0" prefWidth="150.0" text="5" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="45.0">
+        <TextField fx:id="serialNumberField" layoutX="309.0" layoutY="58.0" onKeyReleased="#serialNumberFieldChange" prefHeight="25.0" prefWidth="150.0" text="5" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="45.0">
             <font>
                 <Font size="14.0" />
             </font></TextField>
 
-        <Button fx:id="button" disable="true" layoutX="210.0" layoutY="152.0" mnemonicParsing="false" onAction="#buttonPush" prefHeight="100.0" text="Сгенерировать" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="80.0">
+        <Label fx:id="yearOfReleaseLabel" layoutX="205.0" layoutY="88.0" prefHeight="25.0" text="год выпуска:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="80.0">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <TextField fx:id="yearOfReleaseField" layoutX="309.0" layoutY="87.0" onKeyReleased="#yearOfReleaseFieldChange" prefHeight="25.0" prefWidth="150.0" text="2020" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="80.0">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+
+        <Label fx:id="countChannelsLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="120.0" prefHeight="25.0" text="количество каналов:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="115.0">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <TextField fx:id="countChannelsField" disable="true" layoutX="309.0" layoutY="119.0" onKeyReleased="#countChannelsFieldChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="115.0">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <Label fx:id="upTimerLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="152.0" prefHeight="25.0" text="время наработки" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="hourField" layoutX="181.0" layoutY="145.0" onKeyReleased="#hourFieldChange" prefHeight="25.0" prefWidth="80.0" text="0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <Label fx:id="colonLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="160.0" prefHeight="25.0" text=":" AnchorPane.rightAnchor="202.5" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="minutesField" layoutX="191.0" layoutY="160.0" onKeyReleased="#minutesFieldChange" prefHeight="25.0" prefWidth="60.0" text="0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+
+        <Button fx:id="button" disable="true" layoutX="210.0" layoutY="152.0" mnemonicParsing="false" onAction="#buttonPush" prefHeight="100.0" text="Сгенерировать" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="185.0">
             <font>
                 <Font size="25.0" />
             </font>
         </Button>
-        <ComboBox fx:id="typeComboBox" layoutX="309.0" layoutY="25.0" onAction="#typeComboBoxChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="10.0" />
+    </children>
 </AnchorPane>

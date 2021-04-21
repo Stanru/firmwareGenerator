@@ -1,28 +1,15 @@
 package controllers.tabs;
 
-import controllers.tabs.parameterInterfaces.ComboBoxParameterDecorator;
 import controllers.tabs.parameterInterfaces.TextParameterDecorator;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class Kamerton5_1 implements Initializable {
-    TextParameterDecorator serialNumberInterface;
-    TextParameterDecorator yearOfReleaseInterface;
-    TextParameterDecorator numberOfChannelsInterface;
-    ComboBoxParameterDecorator controllerInterface;
-
-    private int serialNumber;
-    private int yearOfRelease;
-    private int numberOfChannels;
-    private Controller controller;
-
+public class Kamerton5_1 extends AbstractTab {
+    @FXML
+    private ComboBox<String> typeComboBox;
     @FXML
     private Label serialNumberLabel;
     @FXML
@@ -32,110 +19,92 @@ public class Kamerton5_1 implements Initializable {
     @FXML
     private TextField yearOfReleaseField;
     @FXML
-    private Label numberOfChannelsLabel;
+    private Label countChannelsLabel;
     @FXML
-    private TextField numberOfChannelsField;
+    private TextField countChannelsField;
     @FXML
-    private Label controllerLabel;
+    private Label upTimerLabel;
     @FXML
-    private ComboBox<String> controllerComboBox;
+    private TextField hourField;
+    @FXML
+    private Label colonLabel;
+    @FXML
+    private TextField minutesField;
     @FXML
     private Button button;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        serialNumberInterface = new TextParameterDecorator(serialNumberLabel, serialNumberField, "5");
-        yearOfReleaseInterface = new TextParameterDecorator(yearOfReleaseLabel, yearOfReleaseField, "2020");
-        numberOfChannelsInterface = new TextParameterDecorator(numberOfChannelsLabel, numberOfChannelsField, "4");
-        controllerInterface = new ComboBoxParameterDecorator(controllerLabel, controllerComboBox);
-
-        for(Controller o: Controller.values())
-            controllerInterface.addItems(o.getName());
-
-        yearOfReleaseInterface.unblock();
-        controllerInterface.unblock();
-        buttonUnblock();
+    protected ComboBox<String> getTypeComboBox() {
+        return typeComboBox;
     }
 
-    public void serialNumberFieldChange(){
-        serialNumber = serialNumberInterface.getTextConvertToInt();
-
-        if (serialNumber > 0 && serialNumber <= 16383) {
-            yearOfReleaseInterface.unblock();
-            controllerInterface.unblock();
-            buttonUnblock();
-        } else {
-            yearOfReleaseInterface.block();
-            numberOfChannelsInterface.block();
-            controllerInterface.block();
-            buttonBlock();
-        }
+    @Override
+    protected Label getSerialNumberLabel() {
+        return serialNumberLabel;
     }
 
-    public void yearOfReleaseFieldChange(){
-        yearOfRelease = yearOfReleaseInterface.getTextConvertToInt();
-
-        if(yearOfRelease > 2018 && yearOfRelease <= 2047) {
-            controllerInterface.unblock();
-            buttonUnblock();
-        } else {
-            numberOfChannelsInterface.block();
-            controllerInterface.block();
-            buttonBlock();
-        }
+    @Override
+    protected TextField getSerialNumberField() {
+        return serialNumberField;
     }
 
-    public void numberOfChannelsFieldChange(){
-        numberOfChannels = numberOfChannelsInterface.getTextConvertToInt();
-
-        if (numberOfChannels > 0 && numberOfChannels < 5) {
-            controllerInterface.unblock();
-            buttonUnblock();
-        } else {
-            numberOfChannelsInterface.block();
-            buttonBlock();
-        }
+    @Override
+    protected Label getYearOfReleaseLabel() {
+        return yearOfReleaseLabel;
     }
 
-    public void controllerComboBoxChange(){
-        for(Controller o: Controller.values()) {
-            if (o.getName().equals(controllerInterface.getText())) {
-                controller = o;
-                buttonUnblock();
-                return;
-            }
-        }
-        buttonBlock();
+    @Override
+    protected TextField getYearOfReleaseField() {
+        return yearOfReleaseField;
     }
 
-    public void buttonPush(){
-
+    @Override
+    protected Label getCountChannelsLabel() {
+        return countChannelsLabel;
     }
 
-
-    private void buttonBlock(){
-        button.setDisable(true);
+    @Override
+    protected TextField getCountChannelsField() {
+        return countChannelsField;
     }
 
-    private void buttonUnblock(){
-        button.setDisable(false);
+    @Override
+    protected Label getUpTimerLabel() {
+        return upTimerLabel;
     }
 
-    private enum Controller{
-        STM32F407("STM32F407"),
-        STM32F207("STM32F207");
+    @Override
+    protected TextField getHourField() {
+        return hourField;
+    }
 
-        private String name;
-        private String file;
+    @Override
+    protected Label getColonLabel() {
+        return colonLabel;
+    }
 
-        Controller(String name) {
-            this.name = name;
-        }
+    @Override
+    protected TextField getMinutesField() {
+        return minutesField;
+    }
 
-        public String getName() {
-            return name;
-        }
+    @Override
+    protected Button getButton() {
+        return button;
+    }
 
-        public String getFile() { return file; }
+    @Override
+    public void initializeInterface() {
+        devise = Devises.KAMERTON_5;
+        serialNumberInterface = new TextParameterDecorator(serialNumberLabel, serialNumberField, serialNumber);
+        yearOfReleaseInterface = new TextParameterDecorator(yearOfReleaseLabel, yearOfReleaseField, yearOfRelease);
+        countChannelsInterface = new TextParameterDecorator(countChannelsLabel, countChannelsField, countChannels);
+        hourInterface = new TextParameterDecorator(upTimerLabel, hourField, hour);
+        minutesInterface = new TextParameterDecorator(colonLabel, minutesField, minutes);
+    }
+
+    @Override
+    public String getNameFileFirmware() {
+        return String.format("Камертон_5_исп_1_%d(%d)_%s.hex", serialNumber, yearOfRelease, properties.getProperty("version"));
     }
 }

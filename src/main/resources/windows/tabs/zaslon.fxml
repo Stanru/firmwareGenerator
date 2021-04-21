@@ -15,7 +15,7 @@
             <font>
                 <Font size="18.0" />
             </font></Label>
-        <TextField fx:id="serialNumberField" disable="true" layoutX="309.0" layoutY="58.0" onKeyReleased="#serialNumberFieldChange" prefHeight="25.0" prefWidth="150.0" text="5" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="45.0">
+        <TextField fx:id="serialNumberField" layoutX="309.0" layoutY="58.0" onKeyReleased="#serialNumberFieldChange" prefHeight="25.0" prefWidth="150.0" text="5" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="45.0">
             <font>
                 <Font size="14.0" />
             </font></TextField>
@@ -24,16 +24,16 @@
             <font>
                 <Font size="18.0" />
             </font></Label>
-        <TextField fx:id="yearOfReleaseField" disable="true" layoutX="309.0" layoutY="87.0" onKeyReleased="#yearOfReleaseFieldChange" prefHeight="25.0" prefWidth="150.0" text="2020" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="80.0">
+        <TextField fx:id="yearOfReleaseField" layoutX="309.0" layoutY="87.0" onKeyReleased="#yearOfReleaseFieldChange" prefHeight="25.0" prefWidth="150.0" text="2020" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="80.0">
             <font>
                 <Font size="14.0" />
             </font></TextField>
 
-        <Label fx:id="numberOfChannelsLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="120.0" prefHeight="25.0" text="количество каналов:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="115.0">
+        <Label fx:id="countChannelsLabel" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="120.0" prefHeight="25.0" text="количество каналов:" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="115.0">
             <font>
                 <Font size="18.0" />
             </font></Label>
-        <TextField fx:id="numberOfChannelsField" disable="true" layoutX="309.0" layoutY="119.0" onKeyReleased="#numberOfChannelsFieldChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="115.0">
+        <TextField fx:id="countChannelsField" disable="true" layoutX="309.0" layoutY="119.0" onKeyReleased="#countChannelsFieldChange" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="115.0">
             <font>
                 <Font size="14.0" />
             </font></TextField>
@@ -42,7 +42,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="hourField" disable="true" layoutX="181.0" layoutY="145.0" onKeyReleased="#hourFieldChange" prefHeight="25.0" prefWidth="80.0" text="0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="150.0">
+      <TextField fx:id="hourField" layoutX="181.0" layoutY="145.0" onKeyReleased="#hourFieldChange" prefHeight="25.0" prefWidth="80.0" text="0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="150.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -52,7 +52,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="minutesField" disable="true" layoutX="191.0" layoutY="160.0" onKeyReleased="#minutesFieldChange" prefHeight="25.0" prefWidth="60.0" text="0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="150.0">
+      <TextField fx:id="minutesField" layoutX="191.0" layoutY="160.0" onKeyReleased="#minutesFieldChange" prefHeight="25.0" prefWidth="60.0" text="0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="150.0">
          <font>
             <Font size="14.0" />
          </font>

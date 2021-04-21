@@ -8,18 +8,16 @@ public class TextParameterDecorator {
     private TextField textField;
     private String defaultText;
 
-    public TextParameterDecorator(Label label, TextField textField, String defaultText) {
+    public TextParameterDecorator(Label label, TextField textField, int defaultText) {
         if(label == null)
             throw new NullPointerException("label can't be null");
         if(textField == null)
             throw new NullPointerException("textField can't be null");
-        if(defaultText == null)
-            throw new NullPointerException("defaultText can't be null");
 
         this.label = label;
         this.textField = textField;
-        this.defaultText = defaultText;
-        textField.setText(defaultText);
+        this.defaultText = Integer.toString(defaultText);
+        textField.setText(this.defaultText);
     }
 
     public void block(){

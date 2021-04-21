@@ -1,3 +1,4 @@
+import controllers.MainController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -10,11 +11,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Main extends Application {
-    Properties properties = new Properties();
-    /**
-     *
-     * @param event
-     */
+
     private static void handle(javafx.stage.WindowEvent event){
         try {
             Platform.exit();
@@ -24,20 +21,18 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * чтобы создать JavaFX приложения, достаточно реализовать метод start(Stage)
-     * @param primaryStage
-     * @throws Exception
-     */
     @Override
     public void start(Stage primaryStage) throws Exception{
-        try (InputStream input = Main.class.getClassLoader().getResourceAsStream("properties.properties")){
+        Properties properties = new Properties();
+
+        try (InputStream input = this.getClass().getClassLoader().getResourceAsStream("properties.properties")){
             properties.load(input);
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        Parent root = FXMLLoader.load(getClass().getResource("/windows/mainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/windows/mainWindow.fxml"));
+        Parent root = loader.load();
         // создаем сцену с заданными шириной и высотой и содержащую наш корневым контейнером, и связываем ее с окном
         Scene scene  = new Scene(root);
         primaryStage.setScene(scene);
@@ -48,10 +43,6 @@ public class Main extends Application {
         primaryStage.setOnCloseRequest(Main::handle);
     }
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         launch();
     }

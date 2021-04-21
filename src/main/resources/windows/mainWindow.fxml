@@ -3,35 +3,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.MainController"
-            scaleShape="false" stylesheets="@../css/firmwareGenerator.css"
-            prefHeight="400.0" prefWidth="600.0" >
+<AnchorPane prefHeight="400.0" prefWidth="600.0" scaleShape="false" stylesheets="@../css/firmwareGenerator.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-            <Tab fx:id="boxStix4" text="Стикс-4"/>
-            <Tab fx:id="boxKamerton3" text="Камертон-3"/>
+            <Tab fx:id="boxStix4" text="Стикс-4" />
+            <Tab fx:id="boxKamerton3" text="Камертон-3" />
+            <Tab fx:id="boxOrbita" text="Орбита" />
             <Tab text="Камертон-5">
                 <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                         <children>
-                            <TabPane prefHeight="373.0" prefWidth="600.0"
-                                     tabClosingPolicy="UNAVAILABLE"
-                                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <TabPane prefHeight="373.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <tabs>
-                                    <Tab fx:id="boxKamerton5_1" text="Камертон-5"/>
-                                    <Tab fx:id="boxKamerton5_2" text="Камертон-5 исп.2"/>
+                                    <Tab fx:id="boxKamerton5_1" text="Камертон-5" />
+                                    <Tab fx:id="boxKamerton5_2" text="Камертон-5 исп.2" />
                                 </tabs>
                             </TabPane>
                         </children>
                     </AnchorPane>
                 </content>
             </Tab>
-            <Tab fx:id="boxOrbita" text="Орбита"/>
-            <Tab fx:id="boxRosyanka" text="Росянка"/>
-            <Tab  fx:id="boxZaslon" text="Заслон"/>
+            <Tab fx:id="boxZaslon" text="Заслон" />
+            <Tab fx:id="boxRosyanka" text="Росянка" />
         </tabs>
       </TabPane>
    </children>

@@ -2,9 +2,10 @@ plugins {
     id 'java'
     id 'idea'
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
-sourceCompatibility  = 1.8
+sourceCompatibility  = 1.11
 mainClassName = "Main"
 compileJava.options.encoding = 'UTF-8'
 
@@ -21,7 +22,7 @@ repositories {
 
 task('addProperties') {
     doLast {
-        file("src/main/resources/properties.properties").delete();
+        file("src/main/resources/properties.properties").delete()
         file("src/main/resources/properties.properties").append("progammName="+rootProject.name+"\n")
         file("src/main/resources/properties.properties").append("version=$version")
     }
@@ -30,6 +31,11 @@ task('addProperties') {
 configurations {
     // configuration that holds jars to include in the jar
     extraLibs
+}
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml']
 }
 
 jar {
